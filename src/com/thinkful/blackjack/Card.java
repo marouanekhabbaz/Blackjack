@@ -17,7 +17,7 @@ public class Card {
     public Card( Suit suit, Face cardFace, int value, boolean turnedUp) {
         this.suit = suit;
         this.cardFace = cardFace;
-        this.value = value;
+        this.value = cardFace.getValue();
         this.turnedUp = turnedUp;
     }
 
@@ -57,5 +57,24 @@ public class Card {
 
     public void setTurnedUp(boolean turnedUp) {
         this.turnedUp = turnedUp;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        // self check
+        if (this == obj)
+            return true;
+        // null check
+        if (obj == null)
+            return false;
+        // type check and cast
+        if (getClass() != obj.getClass())
+            return false;
+
+        //cast as Card
+        Card card = (Card) obj;
+
+        // field comparison
+        return this.getCardFace() == card.getCardFace() && this.getSuit() == card.getSuit();
     }
 }

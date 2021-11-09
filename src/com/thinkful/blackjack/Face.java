@@ -1,5 +1,7 @@
 package com.thinkful.blackjack;
 
+import java.security.PublicKey;
+
 public enum Face {
     ACE(1, "A"),
     TWO(2, "2"),
@@ -23,6 +25,9 @@ public enum Face {
         this.symbol = symbol;
     }
 
+    public int getValue(){
+        return this.value;
+    }
 
     @Override
     public String toString() {

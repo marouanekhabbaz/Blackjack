@@ -3,6 +3,7 @@ package com.thinkful.blackjack;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Random;
 
 public class Deck {
 //    private Card[] cards;
@@ -37,4 +38,23 @@ public class Deck {
                 "cards=" + Arrays.toString(new List[]{cards}) +
                 '}';
     }
+
+    public void shuffle(){
+        Random ran = new Random();
+        for(int i=0; i < this.cards.size(); i++){
+            Card c = this.cards.remove(i);
+            int newIndex = ran.nextInt(this.cards.size());
+            this.cards.add(newIndex, c);
+        }
+    }
+
+    public Card deal() {
+        if(this.getCards().isEmpty()) {
+            // we need to do something about this
+            return null;
+        }
+        //return the first card
+        return this.getCards().remove(0);
+    }
+
 }
