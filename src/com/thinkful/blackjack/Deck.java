@@ -3,7 +3,7 @@ package com.thinkful.blackjack;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.Random;
+// import java.util.Random;
 
 public class Deck {
 //    private Card[] cards;
