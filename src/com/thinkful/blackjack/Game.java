@@ -91,6 +91,6 @@ public class Game {
             return "You win!";
         }
 
-        return "You lose. Dealer wins.";
+        return "You lose. Dealer wins :( .";
     }
 }
